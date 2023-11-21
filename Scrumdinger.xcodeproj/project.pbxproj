@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		414F1E8F2B0D2C4700D1AC69 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414F1E8E2B0D2C4700D1AC69 /* ScrumsView.swift */; };
+		414F1E912B0D2E8900D1AC69 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414F1E902B0D2E8900D1AC69 /* DetailView.swift */; };
 		A9789BAE2947DE5100305A2F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9789BAD2947DE5100305A2F /* Theme.swift */; };
 		A9789BB02947DF6300305A2F /* DailyScrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9789BAF2947DF6300305A2F /* DailyScrum.swift */; };
 		A9789BB22947E08F00305A2F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9789BB12947E08F00305A2F /* CardView.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		414F1E8E2B0D2C4700D1AC69 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
+		414F1E902B0D2E8900D1AC69 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		A9789BAD2947DE5100305A2F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A9789BAF2947DF6300305A2F /* DailyScrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrum.swift; sourceTree = "<group>"; };
 		A9789BB12947E08F00305A2F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				A9789BB12947E08F00305A2F /* CardView.swift */,
 				A9789BB42947E51500305A2F /* TrailingIconLabelStyle.swift */,
 				414F1E8E2B0D2C4700D1AC69 /* ScrumsView.swift */,
+				414F1E902B0D2E8900D1AC69 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9789BB02947DF6300305A2F /* DailyScrum.swift in Sources */,
+				414F1E912B0D2E8900D1AC69 /* DetailView.swift in Sources */,
 				A9789BB52947E51500305A2F /* TrailingIconLabelStyle.swift in Sources */,
 				A9789BAE2947DE5100305A2F /* Theme.swift in Sources */,
 				414F1E8F2B0D2C4700D1AC69 /* ScrumsView.swift in Sources */,
