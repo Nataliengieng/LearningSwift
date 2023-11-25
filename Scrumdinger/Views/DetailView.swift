@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct DetailView: View {
-    let scrum: DailyScrum
+    @Binding var scrum: DailyScrum
+    
+    @State private var editingScrum = DailyScrum.emptyScrum
+    @State private var isPresentingEditView = false
     
     var body: some View {
         List {
             Section(header: Text("Meeting Info")) {
                 //  set navigation link and set MeetingView as the destination
-                NavigationLink(destination: MeetingView()) {
+                NavigationLink(destination: MeetingView(scrum: $scrum)) {
                     Label("Start Meeting", systemImage: "timer")
                         .font(.headline)
                     .foregroundColor(.accentColor)
@@ -40,15 +43,55 @@ struct DetailView: View {
                     Label(attendee.name, systemImage: "person")
                 }
             }
+            Section(header: Text("History")) {
+                if scrum.history.isEmpty {
+                    Label("No meeting yet", systemImage: "calendar.badge.exclamationmark")
+                }
+                ForEach(scrum.history) { history in
+                    HStack {
+                        Image(systemName: "calendar")
+                        Text(history.date, style: .date)
+                    }
+                }
+            }
         }
         .navigationTitle(scrum.title)
+        .toolbar {
+            //  Edit button that sets isPresentingEditView to true
+            Button("Edit") {
+                isPresentingEditView = true
+                editingScrum = scrum
+            }
+        }
+        //  when isPresentingEditView is true, the DetailEditView is showed using a modal sheet that partially covers the underlying content
+        .sheet(isPresented: $isPresentingEditView) {
+            NavigationStack {
+                DetailEditView(scrum: $editingScrum)
+                    .navigationTitle(scrum.title)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            //  buttons that indicates to the user that they are canceling changes and returning to DetailView
+                            Button("Cancel") {
+                                isPresentingEditView = false
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            //  buttons that saves the changes and return to DetailView
+                            Button("Done") {
+                                isPresentingEditView = false
+                                scrum = editingScrum
+                            }
+                        }
+                    }
+            }
+        }
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            DetailView(scrum: DailyScrum.sampleData[0])
+            DetailView(scrum: .constant(DailyScrum.sampleData[0]))
         }
     }
 }
