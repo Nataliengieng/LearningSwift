@@ -16,8 +16,7 @@ Password:
 xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
 ```
 
-controls the location of the developer directory used by xcrun(1), xcodebuild(1), cc(1), and other Xcode and BSD development tools
-After troubleshooting, this was due to the location of the developer directory is not pointed to the correct directory. This problem was solved by switching the directory and accept the XCode license by running below commands: 
+After troubleshooting, this was due to the location of the developer directory was not pointed to the correct directory. This problem was solved by switching the directory and accept the XCode license by running below commands: 
 ```
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 sudo xcodebuild -license
