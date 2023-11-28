@@ -1,6 +1,6 @@
 # Scrumdinger App
 
-This app is developed based on the [Apple Developer Tutorials] (https://developer.apple.com/tutorials/app-dev-training).
+This app is developed based on the [Apple Developer Tutorials](https://developer.apple.com/tutorials/app-dev-training).
 
 ## TroubleShooting
 
